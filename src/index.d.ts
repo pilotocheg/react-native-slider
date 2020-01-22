@@ -3,7 +3,7 @@ declare module '@miblanchard/react-native-slider' {
 
   import { ImageSourcePropType, StyleProp, ViewStyle } from 'react-native';
 
-  interface SliderProps {
+  interface ISliderProps {
     /**
      *  Set to true if you want to use the default 'spring' animation.
      */
@@ -47,15 +47,15 @@ declare module '@miblanchard/react-native-slider' {
     /**
      * Callback called when the user finishes changing the value (e.g. when the slider is released)
      */
-    onSlidingComplete?: (value: number) => void;
+    onSlidingComplete?: (value: [number]) => void;
     /**
      * Callback called when the user starts changing the value (e.g. when the slider is pressed)
      */
-    onSlidingStart?: (value: number) => void;
+    onSlidingStart?: (value: [number]) => void;
     /**
      * Callback continuously called while the user is dragging the slider
      */
-    onValueChange?: (value: number) => void;
+    onValueChange?: (value: [number]) => void;
     /**
      * Function which returns a custom Component of your liking to be rendered within the thumb.
      */
@@ -83,6 +83,7 @@ declare module '@miblanchard/react-native-slider' {
     thumbTouchSize?: { width: number; height: number };
     /**
      * If true the user will be able to click anywhere on the track to set the value to that position.
+     * Default: `true`
      */
     trackClickable?: boolean;
     /**
@@ -95,5 +96,5 @@ declare module '@miblanchard/react-native-slider' {
     value?: number | number[];
   }
 
-  export const Slider: ComponentClass<SliderProps>;
+  export const Slider: ComponentClass<ISliderProps>;
 }
